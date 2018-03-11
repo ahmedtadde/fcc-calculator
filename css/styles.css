@@ -11,6 +11,7 @@ body{
   letter-spacing: normal;
   font-family: 'Noto Sans', 'leteal', sans-serif;
 }
+
 a{
   text-decoration: none;
   color: white;
@@ -26,13 +27,14 @@ a{
 .header{
   padding: 10px;
   position: relative;
-  height: 15vh;
+  height: 6vh;
   width: 100%;
   color: white;
   background-color: #1a2235;
 }
 
 .header .container{
+  padding: 10px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -61,7 +63,7 @@ a{
 
 .main{
   position: relative;
-  height: 83vh;
+  height: 84vh;
   padding: 10px;
   color: #1a2235;
 }

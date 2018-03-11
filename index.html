@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Simple SciCalc | Ahmed Tadde</title>
+      <link rel="icon" type="image/png" href="assets/calculator.png">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Sans|letela" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/styles.min.css">
+    </head>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="heading">SIMPLE SCI-CALC</div>
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/ahmedtadde/fcc-calculator" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="project-link" href="https://codepen.io/ahmedtadde/pen/ZxGyxO" target="_blank">
+            <i class="fa fa-codepen"></i>
+          </a>
+          <a class="project-link" href="https://twitter.com/iDramedy" target="_blank">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+
+        <section id="mode-section">
+          <div class="btn btn-command" data-command="switch_unit" data-alt="RAD|GRAD">DEG</div>
+          <div class="btn btn-command btn-tab" data-command="switch_tab" data-tab-active="main-section" data-tab-hidden="history-section">
+            <i class="fa fa-history"></i> History
+          </div>
+        </section>
+
+
+        <section id="output-section">
+          <p id="output"></p>
+        </section>
+
+
+        <section id="input-section">
+          <textarea id="input"></textarea>
+        </section>
+
+
+
+        <section id="main-section" class="">
+          <div class="btns-memory btns-row">
+            <span class="btn btn-command" data-command="get_memory">MR</span>
+            <span class="btn btn-command" data-command="add_to_memory">M+</span>
+            <span class="btn btn-command" data-command="substract_from_memory">M-</span>
+            <span class="btn btn-command" data-command="clear_memory">MC</span>
+            <span class="btn btn-command" data-command="input_last_answer">ANS</span>
+          </div>
+          <div class="btns-func">
+            <div id="default-funcs" class="">
+              <div class="btns-row">
+                <span class="btn btn-input" data-input="^2">x<sup>2</sup></span>
+                <span class="btn btn-input" data-input="sqrt(">&#8730;</span>
+                <span class="btn btn-input" data-input="sin(">sin</span>
+                <span class="btn btn-input" data-input="cos(">cos</span>
+                <span class="btn btn-input" data-input="tan(">tan</span>
+              </div>
+              <div class="btns-row">
+                <span class="btn btn-input" data-input="/100">&#37;</span>
+                <span class="btn btn-input" data-input="!">n&#33;</span>
+                <span class="btn btn-input" data-input="gcd(,)">gcd</span>
+                <span class="btn btn-input" data-input="10^">10<sup>n</sup></span>
+                <span class="btn btn-input" data-input="e^">&#8494;<sup>n</sup></span>
+              </div>
+            </div>
+            <div id="alt-funcs" class="hidden">
+              <div class="btns-row">
+                <span class="btn btn-input" data-input="^">x<sup>n</sup></span>
+                <span class="btn btn-input" data-input="^(1/">x<sup>1&#8725;n</sup></span>
+                <span class="btn btn-input" data-input="asin(">sin<sup>-</sup></span>
+                <span class="btn btn-input" data-input="acos(">cos<sup>-</sup></span>
+                <span class="btn btn-input" data-input="atan(">tan<sup>-</sup></span>
+              </div>
+              <div class="btns-row">
+                <span class="btn btn-input" data-input="%">mod</span>
+                <span class="btn btn-input" data-input="1/">1&#8725;n</span>
+                <span class="btn btn-input" data-input="lcm(,)">lcm</span>
+                <span class="btn btn-input" data-input="log10(">log</span>
+                <span class="btn btn-input" data-input="log(">ln</span>
+              </div>
+            </div>
+          </div>
+          <div class="btns-row">
+            <span class="btn btn-command btn-tab" data-command="switch_tab" data-tab-active="default-funcs" data-tab-hidden="alt-funcs">
+              <i class="fa fa-arrow-up"></i> alt
+            </span>
+            <span class="btn btn-command" data-command="clear_input">CE</span>
+            <span class="btn btn-command" data-command="clear_all">C</span>
+            <span class="btn btn-command" data-command="clear_last_input">DEL</span>
+            <span class="btn btn-command" data-command="evaluate">&#61;</span>
+          </div>
+          <div class="btns-eval">
+            <div class="btns-row">
+              <span class="btn btn-input" data-input="pi">&#8508;</span>
+              <span class="btn btn-input">7</span>
+              <span class="btn btn-input">8</span>
+              <span class="btn btn-input">9</span>
+              <span class="btn btn-input" data-input="*">&#10005;</span>
+            </div>
+            <div class="btns-row">
+              <span class="btn btn-input" data-input="e">&#8494;</span>
+              <span class="btn btn-input">4</span>
+              <span class="btn btn-input">5</span>
+              <span class="btn btn-input">6</span>
+              <span class="btn btn-input" data-input="/">&#247;</span>
+            </div>
+            <div class="btns-row">
+              <span class="btn btn-input"data-input="-">&#177;</span>
+              <span class="btn btn-input">1</span>
+              <span class="btn btn-input">2</span>
+              <span class="btn btn-input">3</span>
+              <span class="btn btn-input" data-input="+">&#43;</span>
+            </div>
+            <div class="btns-row">
+              <span class="btn btn-input" data-input="(">&#40;</span>
+              <span class="btn btn-input" data-input=")">&#41;</span>
+              <span class="btn btn-input">0</span>
+              <span class="btn btn-input">.</span>
+              <span class="btn btn-input" data-input="-">&#8722;</span>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="history-section" class="hidden">
+          <span class="btn btn-command" data-command="clear_history"><i class="fa fa-trash"></i> Clear All</span>
+          <div id="history_records"></div>
+        </section>
+
+
+
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.0/math.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
